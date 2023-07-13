@@ -1,10 +1,9 @@
 <?php
 
-namespace Statix\VirusScan;
+namespace Statix\VirusScanner;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Statix\VirusScan\Commands\VirusScanCommand;
 
 class VirusScanServiceProvider extends PackageServiceProvider
 {
@@ -17,9 +16,6 @@ class VirusScanServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('sidecar-virus-scan')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_sidecar-virus-scan_table')
-            ->hasCommand(VirusScanCommand::class);
+            ->hasConfigFile();
     }
 }

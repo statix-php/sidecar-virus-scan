@@ -9,20 +9,15 @@ This package is built on [Laravel Sidecar](https://github.com/hammerstonedev/sid
 
 ## Installation
 
+This package requires that [`hammerstone/sidecar`](https://github.com/hammerstonedev/sidecar) has been installed in your Laravel application.
+
 You can install the package via composer:
 
 ```bash
 composer require statix-php/sidecar-virus-scan
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="sidecar-virus-scan-migrations"
-php artisan migrate
-```
-
-You can publish the config file with:
+You can optionally publish the config file with:
 
 ```bash
 php artisan vendor:publish --tag="sidecar-virus-scan-config"
@@ -35,6 +30,25 @@ return [
     //
 ];
 ```
+
+Register the `ScanForVirusFunction::class` in your `sidecar.php` config file.
+
+```php
+/*
+ * All of your function classes that you'd like to deploy go here.
+ */
+'functions' => [
+    \Statix\VirusScan\Functions\ScanForVirusFunction::class,
+],
+```
+
+Deploy the Lambda function by running:
+
+```bash
+php artisan sidecar:deploy --activate
+```
+
+See Sidecar documentation for details.
 
 ## Usage
 

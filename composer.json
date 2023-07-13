@@ -17,8 +17,9 @@
     ],
     "require": {
         "php": "^8.1",
-        "spatie/laravel-package-tools": "^1.14.0",
-        "illuminate/contracts": "^10.0"
+        "hammerstone/sidecar": "^0.4.1",
+        "illuminate/contracts": "^10.0",
+        "spatie/laravel-package-tools": "^1.14.0"
     },
     "require-dev": {
         "laravel/pint": "^1.0",
@@ -30,20 +31,17 @@
     },
     "autoload": {
         "psr-4": {
-            "Statix\\VirusScan\\": "src/",
-            "Statix\\VirusScan\\Database\\Factories\\": "database/factories/"
+            "Statix\\VirusScanner\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Statix\\VirusScan\\Tests\\": "tests/"
+            "Statix\\VirusScanner\\Tests\\": "tests/"
         }
     },
     "scripts": {
         "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
-        "analyse": "vendor/bin/phpstan analyse",
         "test": "vendor/bin/pest",
-        "test-coverage": "vendor/bin/pest --coverage",
         "format": "vendor/bin/pint"
     },
     "config": {
@@ -56,10 +54,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Statix\\VirusScan\\VirusScanServiceProvider"
+                "Statix\\VirusScanner\\VirusScanServiceProvider"
             ],
             "aliases": {
-                "VirusScan": "Statix\\VirusScan\\Facades\\VirusScan"
+                "VirusScanner": "Statix\\VirusScanner\\Facades\\VirusScan"
             }
         }
     },
