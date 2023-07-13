@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Statix\VirusScan\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class VirusScanCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'sidecar-virus-scan';
 
     public $description = 'My command';
 
